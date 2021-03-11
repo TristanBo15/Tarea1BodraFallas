@@ -1,8 +1,12 @@
+# ERR7 -15
+# ERR2 -2.5
 from métodos import check_char
 from métodos import caps_switch
 import pytest
 
-''' Se hace la parametrización de todos los carácteres con su tupla'''
+"""
+Se hace la parametrización de todos los carácteres con su tupla
+"""
 
 
 @pytest.mark.parametrize("char, out", [
@@ -35,10 +39,14 @@ import pytest
 def test_check_char(char, out):
 
     assert check_char(char) == out
-    ''' Revisa que los valores que retorna check_char sea
-          0 para entradas en el rango de caracteres'''
+    """
+    Revisa que los valores que retorna check_char sea
+    0 para entradas en el rango de caracteres
+    """
 
-    ''' Parametrización de todos los carácteres A-Z, a-z para las pruebas '''
+    """
+    Parametrización de todos los carácteres A-Z, a-z para las pruebas
+    """
 
 
 @pytest.mark.parametrize("MAY, minu", [
@@ -70,8 +78,10 @@ def test_check_char(char, out):
     ('y', 'Y'), ('z', 'Z')])
 def test_caps_switch(charM, charm):
     assert caps_switch(charM) == charm
-    ''' Se revisa que el switch está funcionando correctamente,
-    retornando minusculas y mayusculas segun la entrada '''
+    """
+    Se revisa que el switch está funcionando correctamente,
+    retornando minusculas y mayusculas segun la entrada
+    """
 
 
 def test_error_b():
@@ -79,8 +89,10 @@ def test_error_b():
     assert check_char('test') == 'Error #1'
 
 
-''' Revisa que al ingresar un string con mas de 1 caracter,
-    efectivamente retorne el error b'''
+"""
+Revisa que al ingresar un string con mas de 1 caracter,
+efectivamente retorne el error b
+"""
 
 
 def test_error_c():
@@ -88,13 +100,17 @@ def test_error_c():
     assert check_char('17') == 'Error #2'
 
 
-''' Revisa que al ingresar un string fuera del rango A-Z o a-z,
-    efectivamente retorne el error c'''
+"""
+Revisa que al ingresar un string fuera del rango A-Z o a-z,
+efectivamente retorne el error c
+"""
 
 
 def test_error_d():
 
     assert check_char(10) == 'Error #3'
 
-   ''' Revisa que al ingresar un parámetro que no corresponde a un string,
-        efectivamente retorne el error d'''
+    """
+    Revisa que al ingresar un parámetro que no corresponde a un string,
+    efectivamente retorne el error d
+    """
